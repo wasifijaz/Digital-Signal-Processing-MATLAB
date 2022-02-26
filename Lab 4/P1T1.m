@@ -1,0 +1,20 @@
+fs = 200;
+fm1 = 15;
+fm2 = 40;
+t = 0:1/fs:10-1/fs;
+x = 5*sin(2*pi*fm1*t) + 5*sin(2*pi*fm2*t);
+N = length(x);
+x = 2/N*x;
+y = fft(x);
+y1 = fftshift(y);
+f1 = linspace(-fs/2,fs/2,N);
+figure
+subplot(3,1,1);
+stem(f1,x);
+title('Orginal Analog Signal');
+subplot(3,1,2);
+stem(f1,abs(y1));
+title('Magnitude Response');
+subplot(3,1,3);
+stem(f1,angle(y1));
+title('Phase Response');
