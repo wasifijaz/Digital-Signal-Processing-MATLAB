@@ -1,0 +1,14 @@
+n = [1 3 0];
+d = [1 -3 2];
+[z,p,k] = tf2zp(n,d);
+disp('1. Zeros at are: ');disp(z);
+disp('2. Poles at are: ');disp(p);
+figure(1);
+zplane(n,d);
+title('Z-Plane');
+figure(2);
+freqz(n,d);
+title('Frequence Response');
+figure(3);
+impz(n,d);
+title('Impluse Response');
